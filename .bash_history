@@ -1,0 +1,2 @@
+cd ..
+touch .Rprofile

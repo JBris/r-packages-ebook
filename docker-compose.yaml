@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+
+  rstudio:
+    image: ghcr.io/jbris/stan-cmdstanr-gpu-docker:${CMDSTAN_VERSION}
+    container_name: "${PROJECT_NAME}-rstudio"
+    hostname: rstudio
+    stop_grace_period: 10s
+    restart: always
+    environment:
+      USER: $R_STUDIO_USER
+      PASSWORD: $R_STUDIO_PASSWORD
+      ROOT: "TRUE"
+      DISABLE_AUTH: "TRUE"
+      R_SEED: $R_SEED
+    # build:
+    #   context: .
+    #   args:
+    #     TIDYVERSE_TAG: $TIDYVERSE_TAG
+    #     CMDSTAN_VERSION: $CMDSTAN_VERSION
+    #     CMDSTANR_VERSION: $CMDSTANR_VERSION
+    ports:
+      - ${R_STUDIO_PORT}:8787
+    mem_limit: 6g
+    mem_reservation: 2g
+    volumes:
+      - .:/home/rstudio
+
+networks:
+  default:
+    name: $PROJECT_NAME

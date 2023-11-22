@@ -1,0 +1,135 @@
+---
+title: "The Whole Game"
+format: gfm
+editor: source
+date: "`r Sys.Date()`"
+author: James Bristow
+mainfont: Times New Roman
+fig_caption: yes
+fontsize: 12pt
+linkcolor: black
+urlcolor: black
+citecolor: black
+geometry: margin = 1.25in
+theme: yeti
+highlight: tango
+link-citations: no
+toc: false
+lof: true
+lot: true
+---
+
+## 1.1 Load devtools and friends
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+library(devtools)
+packageVersion("devtools")
+```
+
+##   1.4 create_package() 
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+create_package("/home/rstudio/regexcite")
+```
+
+##  1.7 use_r() 
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+use_r("strsplit1")
+```
+
+##  1.8 load_all() 
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+load_all()
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+(x <- "alfa,bravo,charlie,delta")
+strsplit1(x, split = ",")
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+exists("strsplit1", where = globalenv(), inherits = FALSE)
+```
+
+##  1.9 check() 
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+check() 
+```
+
+##  1.11 use_mit_license() 
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+use_mit_license()
+```
+
+##  1.12 document() 
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+document() 
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+?strsplit1 
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+check() 
+```
+
+##  1.14 install() 
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+install() 
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+library(regexcite)
+
+x <- "alfa,bravo,charlie,delta"
+strsplit1(x, split = ",")
+```
+
+##  1.15 use_testthat() 
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+use_testthat()
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+use_test("strsplit1")
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+test()
+```
+
+## use_package()
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+use_package("stringr")
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+use_package("stringr")
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+load_all()
+str_split_one("a, b, c", pattern = ", ")
+```
+
+##  1.18 use_readme_rmd() 
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+build_readme()
+```
+
+##  1.19 The end: check() and install() 
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+check()
+install()
+```

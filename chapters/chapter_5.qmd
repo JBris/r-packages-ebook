@@ -1,0 +1,81 @@
+---
+title: "5  The package within"
+format: gfm
+editor: source
+date: "`r Sys.Date()`"
+author: James Bristow
+mainfont: Times New Roman
+fig_caption: yes
+fontsize: 12pt
+linkcolor: black
+urlcolor: black
+citecolor: black
+geometry: margin = 1.25in
+theme: yeti
+highlight: tango
+link-citations: no
+toc: false
+lof: true
+lot: true
+---
+
+##  5.4 Delta: a failed attempt at making a package
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+usethis::create_package("~/delta")
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+usethis::create_package("~/delta")
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+devtools::document()
+devtools::install()
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+library(tidyverse)
+library(delta)
+
+infile <- "swim.csv"
+dat <- read_csv(infile, col_types = cols(name = "c", where = "c", temp = "d"))
+
+dat <- dat %>% 
+  localize_beach() %>% 
+  celsify_temp()
+
+write_csv(dat, outfile_path(infile))
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+devtools::check()
+```
+
+##  5.5 Echo: a working package
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+usethis::create_package("~/echo")
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+devtools::install()
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+devtools::check()
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+library(tidyverse)
+library(echo)
+
+infile <- "swim.csv"
+dat <- read_csv(infile, col_types = cols(name = "c", where = "c", temp = "d"))
+
+dat <- dat %>% 
+  localize_beach() %>% 
+  celsify_temp()
+
+write_csv(dat, outfile_path(infile))
+```

@@ -1,0 +1,28 @@
+---
+title: "Fundamental development workflows"
+format: gfm
+editor: source
+date: "`r Sys.Date()`"
+author: James Bristow
+mainfont: Times New Roman
+fig_caption: yes
+fontsize: 12pt
+linkcolor: black
+urlcolor: black
+citecolor: black
+geometry: margin = 1.25in
+theme: yeti
+highlight: tango
+link-citations: no
+toc: false
+lof: true
+lot: true
+---
+
+##  4.1.1 Survey the existing landscape
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+library(available)
+
+available("doofus")
+```
