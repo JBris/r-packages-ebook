@@ -13,7 +13,7 @@ citecolor: black
 geometry: margin = 1.25in
 theme: yeti
 highlight: tango
-link-citations: no
+link-citations: false
 toc: false
 lof: true
 lot: true

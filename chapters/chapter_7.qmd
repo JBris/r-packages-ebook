@@ -1,0 +1,62 @@
+---
+title: "7 Data"
+format: gfm
+editor: source
+date: "`r Sys.Date()`"
+author: James Bristow
+mainfont: Times New Roman
+fig_caption: yes
+fontsize: 12pt
+linkcolor: black
+urlcolor: black
+citecolor: black
+geometry: margin = 1.25in
+theme: yeti
+highlight: tango
+link-citations: false
+toc: false
+lof: true
+lot: true
+---
+
+##  7.1 Exported data
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+usethis::create_package("~/pkg")
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+my_pkg_data <- sample(1000)
+usethis::use_data(my_pkg_data)
+```
+
+###  7.1.1 Preserve the origin story of package data
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+usethis::use_data_raw()
+
+usethis::use_data_raw("my_pkg_data")
+```
+
+##  7.2 Internal data
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+
+internal_this <- 1
+internal_that <-  2 
+usethis::use_data(internal_this, internal_that, internal = TRUE)
+```
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+
+usethis::use_data_raw("internal_this")
+usethis::use_data_raw("internal_that")
+```
+
+##  7.3 Raw data file
+
+```{r, include = TRUE, eval=FALSE, echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE}
+
+usethis::use_data_raw("internal_this")
+usethis::use_data_raw("internal_that")
+```
